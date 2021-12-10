@@ -16,8 +16,18 @@ describe("Tickets", () => {
     cy.get("#ticket-quantity").select("2");
   });
 
-  it.only("Select 'Vip' ticket type", () => {
+  it("Select 'Vip' ticket type", () => {
     cy.get("#vip").check();
+  });
+
+  it("Select 'social media' checkbox", () => {
+    cy.get("#social-media").check();
+  });
+
+  it.only("Selects 'friend' and 'publication', then uncheck 'friend'",() => {
+    cy.get("#friend").check();
+    cy.get("#publication").check();
+    cy.get("#friend").uncheck();
   });
   it("Has 'TICKETBOX' header's heading", () => {});
 });
